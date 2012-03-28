@@ -90,6 +90,6 @@ describe "sum_of_letters" do
   it "should return the number of letters in the written words of 1 - 1000" do
     @number = 1000
     initialize_values
-    sum_of_letters.should == 863
+    sum_of_letters.should == 21124
   end
 end
