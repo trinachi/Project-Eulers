@@ -31,9 +31,9 @@ def letter_count
   parsed_digits = @digit.to_s.each_char {|x| digit << x.to_i }
   while digit.length > 0
     digit.shift if digit[0] == 0
-    total += 8 + extra(digit[0]) if digit.length == 4 # thousand
+    total += 8 + extra(digit[0]) if digit.length == 4 # x thousand
     total += 10 + extra(digit[0]) if digit.length == 3 && digit[1] + digit[2] != 0 # x hundred and
-    total += 7 + extra(digit[0]) if digit.length == 3 && digit[1] + digit[2] == 0 # hundred
+    total += 7 + extra(digit[0]) if digit.length == 3 && digit[1] + digit[2] == 0 # x hundred
     total += extra(digit[0]*10) if digit.length == 2 && digit[0] > 1 # tens
     if digit.length == 2 && digit[0] == 1 #teens
       total += extra((digit[0].to_s + digit[1].to_s).to_i) 
